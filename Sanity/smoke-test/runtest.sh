@@ -34,6 +34,10 @@ PACKAGE="libcap-ng"
 
 TESTUSER="libcapngtestuser"
 SPECFILE="~${TESTUSER}/rpmbuild/SPECS/libcap-ng.spec"
+export RPM_ARCH=$(uname -m)
+export RPM_PACKAGE_RELEASE=$(yum info $PACKAGE | awk '/^Release/ {print $3; exit}')
+export RPM_PACKAGE_VERSION=$(yum info $PACKAGE | awk '/^Version/ {print $3; exit}')
+export RPM_PACKAGE_NAME=$PACKAGE
 
 rlJournalStart
 
