@@ -10,23 +10,26 @@ description: |
 contact: None <omoris@redhat.com>
 test: ./runtest.sh
 recommend:
-- libcap-ng
-- libcap-ng-utils
+  - libcap-ng
+  - libcap-ng-utils
 duration: 5m
 enabled: true
 tag:
-- CI-Tier-1
-- NoRHEL4
-- NoRHEL5
-- TIPpass_Security
-- Tier2
-- Tier2security
-- TierCandidatesFAIL
+  - CI-Tier-1
+  - NoRHEL4
+  - NoRHEL5
+  - TIPpass_Security
+  - Tier2
+  - Tier2security
+  - TierCandidatesFAIL
 tier: '2'
 extra-nitrate: TC#0499506
-extra-summary: /CoreOS/libcap-ng/Regression/compare-capabilities-from-captest-and-capsh
-extra-task: /CoreOS/libcap-ng/Regression/compare-capabilities-from-captest-and-capsh
+extra-summary: 
+    /CoreOS/libcap-ng/Regression/compare-capabilities-from-captest-and-capsh
+extra-task: 
+    /CoreOS/libcap-ng/Regression/compare-capabilities-from-captest-and-capsh
 adjust:
--   enabled: false
+  - enabled: false
     when: distro == rhel-4, rhel-5
     continue: false
+id: d8b7cbb5-5c4a-458d-bdb1-ae463f515478
