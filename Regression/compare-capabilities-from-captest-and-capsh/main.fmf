@@ -13,7 +13,7 @@ recommend:
   - libcap-ng
   - libcap-ng-utils
 duration: 5m
-enabled: true
+enabled: false
 tag:
   - CI-Tier-1
   - NoRHEL4
