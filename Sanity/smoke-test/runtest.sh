@@ -57,7 +57,7 @@ rlJournalStart
 
         rlRun "/sbin/runuser -s /bin/sh -c 'rpmbuild -vv -bc ${SPECFILE}' -- ${TESTUSER}" 0 "Building libcap-ng source RPM"
 
-        rlRun "/sbin/runuser -s /bin/sh -c 'cd ~/rpmbuild/BUILD/libcap-ng*; [ -f Makefile ] || cd libcap-ng-*; make check' > make.check.out -- ${TESTUSER}" 0 "Running libcap-ng self-test (as non-root user)"
+        rlRun "/sbin/runuser -s /bin/sh -c 'cd ~/rpmbuild/BUILD/libcap-ng-[0-9]*[0-9]; [ -f Makefile ] || cd libcap-ng-*; make check' > make.check.out -- ${TESTUSER}" 0 "Running libcap-ng self-test (as non-root user)"
         rlRun "cat make.check.out"
 
         if rlIsRHEL 6; then
