@@ -1,0 +1,24 @@
+summary: Verify cap-audit produces actionable and accurate capability recommendations
+description: |
+    cap-audit is a new tool in libcap-ng 0.9.2+ that uses eBPF to hook
+    capability checks in the kernel, accurately determining what capabilities
+    a program needs. This test verifies basic functionality and accuracy
+    by auditing programs with known capability requirements.
+contact: Adam Prikryl <aprikryl@redhat.com>
+test: ./runtest.sh
+duration: 10m
+enabled: true
+tier: '1'
+tag:
+  - CI-Tier-1
+  - Tier1
+  - Tier1security
+  - TIPpass_Security
+recommend:
+  - libcap-ng
+  - libcap-ng-utils
+  - iputils
+adjust:
+  - enabled: false
+    when: distro < rhel-10
+    continue: false

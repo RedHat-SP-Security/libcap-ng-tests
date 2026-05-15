@@ -1,0 +1,24 @@
+summary: Verify netcap --advanced produces accurate situational awareness
+description: |
+    netcap --advanced is a new option in libcap-ng 0.9.2+ that calls out
+    the attack surface for all network facing applications and highlights
+    the defenses taken to reduce desirability for attack. This test verifies
+    basic functionality and output accuracy.
+contact: Adam Prikryl <aprikryl@redhat.com>
+test: ./runtest.sh
+duration: 5m
+enabled: true
+tier: '1'
+tag:
+  - CI-Tier-1
+  - Tier1
+  - Tier1security
+  - TIPpass_Security
+recommend:
+  - libcap-ng
+  - libcap-ng-utils
+  - openssh-server
+adjust:
+  - enabled: false
+    when: distro < rhel-10
+    continue: false
