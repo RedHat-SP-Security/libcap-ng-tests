@@ -1,5 +1,8 @@
 summary: Test calls upstream test suite.
-description: ''
+description: |
+    Verify that the libcap-ng upstream test suite passes by rebuilding the
+    source RPM as a non-root user and running make check, ensuring all
+    tests pass without failures.
 contact: Martin Zelený <mzeleny@redhat.com>
 test: ./runtest.sh
 recommend:
