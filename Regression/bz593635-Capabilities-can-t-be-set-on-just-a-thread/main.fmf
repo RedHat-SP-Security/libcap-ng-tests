@@ -1,6 +1,9 @@
 summary: When changing capabilities on a thread, it actually changes the 
     capabilities
-description: ''
+description: |
+    Verify that capabilities can be independently set on individual threads
+    by compiling and running a multithreaded program that uses libcap-ng to
+    apply different capabilities on separate pthreads.
 contact: Martin Zelený <mzeleny@redhat.com>
 test: ./runtest.sh
 recommend:
