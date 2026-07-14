@@ -20,5 +20,6 @@ recommend:
   - openssh-server
 adjust:
   - enabled: false
-    when: distro < rhel-10
+    when: distro < rhel-10.4
+    because: functionality should land in 10.4
     continue: false
